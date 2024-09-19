@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+        }
+        .right-panel {
+            width: 20%;
+            background-color: #f1f1f1;
+            padding: 10px;
+            height: 100vh;
+        }
+        .left-panel {
+            width: 80%;
+            padding: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .option {
+            margin-left: 20px;
+        }
+        .submit-btn, .next-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .submit-btn:hover, .next-btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .timer {
+            font-size: 20px;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .marked {
+            color: green;
+        }
+        .unmarked {
+            color: red;
+        }
+        .loading-screen {
+            display: none;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="timer" id="timer">Time Left: 30:00</div>
+
+<div class="container">
+    <div class="left-panel">
+        <h2>MCQ Test</h2>
+        <form id="quizForm">
+
+    <div class="question" id="question1" style="display: block;">
+        <div class="question-title">Q1. How many atoms of Sulphur in 64g Sulphur(S8)?</div>
+        <input type="radio" name="q1" value="Option1" class="option"> 1.5x10^23<br>
+        <input type="radio" name="q1" value="Option2" class="option"> 1.2x10^24<br>
+        <input type="radio" name="q1" value="Option3" class="option"> 1.2x10^23<br>
+        <input type="radio" name="q1" value="Option4" class="option"> 1.5x10^24<br>
+        <input type="hidden" name="correct1" value="Option2">
+        <input type="hidden" name="correctMarks1" value="4">
+        <input type="hidden" name="incorrectMarks1" value="-1">
+        <button type="button" class="next-btn" onclick="saveAndNext(1)">Save & Next</button>
+    </div>
+    
+    <div class="question" id="question2" style="display: none;">
+        <div class="question-title">Q2. Effective collisions are those in which molecules must:</div>
+        <input type="radio" name="q2" value="Option1" class="option"> Have energy equal to or greater than the threshold energy<br>
+        <input type="radio" name="q2" value="Option2" class="option"> Have proper orientation<br>
+        <input type="radio" name="q2" value="Option3" class="option"> Acquire the energy of activation<br>
+        <input type="radio" name="q2" value="Option4" class="option"> All of the above<br>
+        <input type="hidden" name="correct2" value="Option4">
+        <input type="hidden" name="correctMarks2" value="4">
+        <input type="hidden" name="incorrectMarks2" value="-1">
+        <button type="button" class="next-btn" onclick="saveAndNext(2)">Save & Next</button>
+    </div>
+    
+    <button type="button" class="submit-btn" id="submit-btn" style="display: none;" onclick="submitQuiz()">Submit</button>
+</form>
+        <div class="loading-screen" id="loading-screen">Submitting... Please wait.</div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <div class="right-panel">
+        <h3>Question Status</h3>
+        <div id="question-status">
+<div id="qstatus1" class="unmarked">Q1: Unmarked</div><div id="qstatus2" class="unmarked">Q2: Unmarked</div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Timer functionality
+var totalTime = 30 * 60;  // 30 minutes in seconds
+function startTimer() {
+    var timerInterval = setInterval(function() {
+        var minutes = Math.floor(totalTime / 60);
+        var seconds = totalTime % 60;
+        if (seconds < 10) seconds = "0" + seconds;
+        document.getElementById('timer').textContent = "Time Left: " + minutes + ":" + seconds;
+        totalTime--;
+        if (totalTime < 0) {
+            clearInterval(timerInterval);
+            submitQuiz();  // Auto submit when time is up
+        }
+    }, 1000);
+}
+startTimer();
+
+// Function to show the next question
+function saveAndNext(questionNumber) {
+    // Mark question as attempted
+    document.getElementById('qstatus' + questionNumber).classList.remove('unmarked');
+    document.getElementById('qstatus' + questionNumber).classList.add('marked');
+    document.getElementById('qstatus' + questionNumber).textContent = "Q" + questionNumber + ": Marked";
+    
+    // Hide current question
+    document.getElementById('question' + questionNumber).style.display = 'none';
+    
+    // Show next question or submit button
+    if (questionNumber < 2) {
+        document.getElementById('question' + (questionNumber + 1)).style.display = 'block';
+    } else {
+        document.getElementById('submit-btn').style.display = 'block';
+    }
+}
+
+// Function to submit the quiz
+function submitQuiz() {
+    document.getElementById('quizForm').style.display = 'none';  // Hide the form
+    document.getElementById('loading-screen').style.display = 'block';  // Show loading screen
+
+    setTimeout(function() {
+        // Show result page
+        document.getElementById('loading-screen').style.display = 'none';
+        document.getElementById('result').innerHTML = "<h3>Test Submitted</h3><p>Your score and time details will be displayed soon!</p>";
+    }, 3000);
+}
+</script>
+
+</body>
+</html>

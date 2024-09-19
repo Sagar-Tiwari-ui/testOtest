@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,16 +78,26 @@
 
     <div class="declaration">
         <label>
-            <input type="checkbox">
-            I have read all the instructions carefully and have understood them. I agree not to cheat or use unfair means in this examination. I understand that using unfair means of any sort for my own or someone else’s advantage will lead to my immediate disqualification. The decision of the administrator will be final in these matters and cannot be appealed.
+            <input type="checkbox" id="declaration-checkbox">
+            I have read all the instructions carefully and have understood them. I agree not to cheat or use unfair means in this examination. I understand that using unfair means of any sort for my own or someone else�s advantage will lead to my immediate disqualification. The decision of the administrator will be final in these matters and cannot be appealed.
         </label>
     </div>
     
     <div class="button-container">
-        <button class="start-button">I am ready to begin</button>
+        <button class="start-button" onclick="startTest()" id="start-btn" disabled>I am ready to begin</button>
     </div>
 
 </div>
+
+<script>
+document.getElementById('declaration-checkbox').addEventListener('change', function() {
+    document.getElementById('start-btn').disabled = !this.checked;
+});
+
+function startTest() {
+    window.location.href = 'mcq_test_with_next_loading.html';  // Redirect to the actual test page
+}
+</script>
 
 </body>
 </html>

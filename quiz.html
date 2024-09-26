@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="quiz.css"> <!-- Link to your CSS file -->
+    
+    <!-- SheetJS library for reading Excel files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+    <script>
+        // Function to set exam date dynamically based on today's date
+        function setExamDate() {
+            const examDateElement = document.getElementById('examDate');
+            const currentDate = new Date(); // Get today's date dynamically
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            examDateElement.textContent = `Exam Date: ${currentDate.toLocaleDateString('en-US', options)}`;
+        }
+
+        // Timer functionality
+        let timerDuration = 60 * 60; // 60 minutes in seconds
+        let interval;
+
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            
+            interval = setInterval(function() {
+                const minutes = Math.floor(timerDuration / 60);
+                const seconds = timerDuration % 60;
+
+                timerElement.textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                timerDuration--;
+
+                // When the timer reaches zero, stop the timer and submit the quiz automatically
+                if (timerDuration < 0) {
+                    clearInterval(interval);
+                    timerElement.textContent = "Time's up!";
+                    document.getElementById('quizForm').submit(); // Automatically submit the form
+                }
+            }, 1000);
+        }
+
+        let questions = [];
+        let studentAnswers = [];
+        let currentQuestionIndex = 0;
+
+        // Function to load Excel file and populate the quiz
+        function loadExcelFile() {
+            const url = 'questions.xlsx'; // Path to your Excel file
+            fetch(url)
+                .then(response => response.arrayBuffer())
+                .then(data => {
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const firstSheetName = workbook.SheetNames[0];
+                    const worksheet = workbook.Sheets[firstSheetName];
+
+                    const quizData = XLSX.utils.sheet_to_json(worksheet, { header: 1 }); // Convert sheet to JSON
+                    questions = quizData.slice(1); // Exclude the header row
+                    populateQuestionPalette(); // Create the question palette
+                    displayQuestion(currentQuestionIndex); // Display the first question
+                })
+                .catch(error => console.error("Error loading Excel file:", error));
+        }
+
+        // Function to display a question
+        function displayQuestion(index) {
+            const questionTextElement = document.getElementById('question-text');
+            const optionsListElement = document.getElementById('options-list');
+
+            // Get current question data
+            const questionData = questions[index];
+            const questionText = questionData[0];
+            const options = questionData.slice(1, 5);
+
+            questionTextElement.textContent = `Q${index + 1}: ${questionText}`;
+            
+            // Clear previous options
+            optionsListElement.innerHTML = '';
+
+            // Display new options
+            options.forEach((option, i) => {
+                const li = document.createElement('li');
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'option';
+                input.value = option;
+                input.id = `option${i}`;
+
+                // Check if the current option was previously selected by the student
+                if (studentAnswers[index] === option) {
+                    input.checked = true;
+                }
+
+                const label = document.createElement('label');
+                label.htmlFor = `option${i}`;
+                label.textContent = option;
+
+                li.appendChild(input);
+                li.appendChild(label);
+                optionsListElement.appendChild(li);
+            });
+
+            updatePalette();
+        }
+
+        // Function to save the student's answer
+        function saveAnswer() {
+            const selectedOption = document.querySelector('input[name="option"]:checked');
+            if (selectedOption) {
+                studentAnswers[currentQuestionIndex] = selectedOption.value;
+            }
+            updatePalette();
+        }
+
+        // Function to update the question palette based on answers
+        function updatePalette() {
+            const palette = document.getElementById('question-grid');
+            const questionBoxes = palette.children;
+
+            for (let i = 0; i < questionBoxes.length; i++) {
+                if (studentAnswers[i]) {
+                    questionBoxes[i].classList.add('answered');
+                }
+            }
+        }
+
+        // Function to populate the question palette
+        function populateQuestionPalette() {
+            const palette = document.getElementById('question-grid');
+            palette.innerHTML = ''; // Clear previous content
+
+            for (let i = 0; i < questions.length; i++) {
+                const questionBox = document.createElement('div');
+                questionBox.classList.add('question-box');
+                questionBox.textContent = i + 1;
+                questionBox.addEventListener('click', () => {
+                    currentQuestionIndex = i;
+                    displayQuestion(i);
+                });
+                palette.appendChild(questionBox);
+            }
+        }
+
+        // Event listeners for navigation buttons
+        document.getElementById('next-btn').addEventListener('click', () => {
+            saveAnswer();
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+            }
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion(currentQuestionIndex);
+            }
+        });
+
+        document.getElementById('save-next-btn').addEventListener('click', () => {
+            saveAnswer();
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(currentQuestionIndex);
+            }
+        });
+
+        window.onload = function() {
+            setExamDate();
+            startTimer();
+            loadExcelFile(); // Load the Excel file when the page loads
+        };
+    </script>
+</head>
+<body>
+
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        
+        <!-- Candidate and Exam Info Section -->
+        <div class="candidate-info">
+            <div>
+                <p id="candidateName">Candidate Name</p>
+            </div>
+            <div>
+                <p>Chemistry Test</p>
+                <p id="examDate">Exam Date: </p> <!-- Dynamic exam date will be shown here -->
+            </div>
+            <div class="timer">
+                <p id="timer">Time Left: 60:00</p> <!-- Timer will update dynamically here -->
+            </div>
+        </div>
+
+        <!-- Question Section -->
+        <div class="question-section">
+            <h2 id="question-text">Question will be loaded here from Excel file</h2>
+
+            <!-- Options for the question -->
+            <ul class="question-options" id="options-list">
+                <!-- Options will be dynamically loaded here -->
+            </ul>
+        </div>
+
+        <!-- Buttons for question actions -->
+        <div class="button-section">
+            <button class="previous-button" id="prev-btn">Previous</button>
+            <button class="next-button" id="next-btn">Next</button>
+            <button class="save-next" id="save-next-btn">Save & Next</button>
+            <button class="submit-button" id="submit-btn">Submit</button>
+        </div>
+
+        <!-- Right Panel for Question Navigation and Status -->
+        <div class="right-panel">
+            <!-- Question Navigation Grid -->
+            <div class="question-grid" id="question-grid">
+                <!-- Dynamically generate question numbers as divs -->
+            </div>
+        </div>
+
+    </div>
+
+    <script src="quiz.js"></script> <!-- Link to your JavaScript file for quiz logic -->
+</body>
+</html>

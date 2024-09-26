@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .question-status {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .question-status span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .status-gray { background-color: #d3d3d3; }
+        .status-orange { background-color: #ff6600; }
+        .status-green { background-color: #4caf50; }
+        .status-purple { background-color: #7a33cc; }
+        .status-purple-answered { 
+            background-image: linear-gradient(45deg, #7a33cc 50%, #1dd61d 50%); 
+            background-size: 200%;
+        }
+        .navigation-buttons {
+            margin-top: 20px;
+        }
+        .nav-btn {
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .nav-btn:hover {
+            background-color: #0056b3;
+        }
+        .checkbox-container {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+        .proceed-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+        }
+        .proceed-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Please read the instructions carefully</h2>
+
+        <div class="instructions">
+            <p>1. Total duration of this test is 60 min.</p>
+            <p>2. The clock will be set at the server. The countdown timer in the top right corner of the screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself. You will not be required to end or submit your examination.</p>
+            <p>3. The Questions Palette displayed on the right side of the screen will show the status of each question using one of the following symbols:</p>
+            <div class="question-status"><span class="status-gray"></span> You have not visited the question yet.</div>
+            <div class="question-status"><span class="status-orange"></span> You have not answered the question.</div>
+            <div class="question-status"><span class="status-green"></span> You have answered the question.</div>
+            <div class="question-status"><span class="status-purple"></span> You have NOT answered the question, but have marked the question for review.</div>
+
+            <p>4. You can click on the ">" arrow which appears to the left of the question palette to collapse the question palette thereby maximizing the question window.</p>
+            <p>5. You can click on your "Profile" image on the top right corner of your screen to change the language during the exam for the entire question paper. On clicking of Profile image you will get a drop-down to change the question content to the desired language.</p>
+            <p>6. You can click on <span class="nav-btn">🔽</span> to navigate to the bottom and <span class="nav-btn">🔼</span> to navigate to the top of the question area, without scrolling.</p>
+        </div>
+
+        <div class="checkbox-container">
+            <label>
+                <input type="checkbox" id="agreeCheckbox" onchange="toggleProceedButton()">
+                I have read and understood the instructions. All computer hardware allotted to me are in proper working condition. I declare that I am not in possession of/ not wearing/ not carrying any prohibited gadget like mobile phone, bluetooth devices etc. or any prohibited material with me into the Examination Hall. I agree that in case of not adhering to the instructions, I shall be liable to be debarred from this Test and/or to disciplinary action, which may include a ban from future Tests.
+            </label>
+        </div>
+
+<button id="proceedBtn" class="proceed-btn" disabled>PROCEED</button>
+    </div>
+
+    <script>
+        function toggleProceedButton() {
+            const checkbox = document.getElementById('agreeCheckbox');
+            const proceedBtn = document.getElementById('proceedBtn');
+            proceedBtn.disabled = !checkbox.checked;
+        }
+    </script>
+    <!-- HTML for the instructions page -->
+<script>
+  document.getElementById('proceedBtn').addEventListener('click', () => {
+    window.location.href = 'quiz.html'; // Redirect to the quiz page
+  });
+</script>
+</body>
+</html>

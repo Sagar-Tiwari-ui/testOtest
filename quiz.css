@@ -1,0 +1,256 @@
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-user-select: none;  /* Chrome, Safari, Opera */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* Internet Explorer/Edge */
+  user-select: none;          /* Standard */
+}
+/* Styling for the logo */
+.logo-container {
+  position: absolute;
+  top: 10px;   /* Adjust the distance from the top */
+  right: 50px; /* Adjust the distance from the right */
+}
+
+.logo-image {
+  width: 100px; /* Set the size of the logo (adjust as needed) */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+/* Container for the whole quiz */
+.quiz-container {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+/* Clearfix for floating elements */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Timer display */
+.timer {
+  color: #0091FF;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: right;
+  margin-right: 20px;
+}
+
+/* Quiz layout */
+.quiz-layout {
+  width: 70%;
+  float: left;
+}
+
+/* Fixed dimension for the quiz panel */
+.question-section {
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 850px; /* Maximum width */
+  height: 300px;    /* Fixed height */
+  overflow-y: auto; /* Scrollbar for overflowing content */
+  box-sizing: border-box;
+}
+
+.question-section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Other elements in the question section (options, etc.) */
+.question-options {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question-options li {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.question-options li:hover {
+  background-color: #e6f7ff;
+}
+
+.question-options li.selected {
+  background-color: #cceeff;
+  border-color: #0091ff;
+}
+
+/* Buttons at the bottom of question */
+.button-section {
+  display: flex;
+  justify-content: space-around; /* Change from 'space-between' to 'space-around' */
+  margin-top: 20px;
+  gap: 1px; /* Add gap to control the space between buttons */
+}
+
+/* Optional: Reduce margins inside individual buttons if needed */
+.button-section button {
+  margin: 0;  /* Remove or reduce margin around buttons */
+  padding: 10px 15px; /* Adjust padding inside buttons */
+}
+
+.button-section button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  margin: 0 0px;
+  color: white;
+}
+
+.button-section button:hover {
+  opacity: 0.9;
+}
+
+.save-next {
+  background-color: #4CAF50; /* Green */
+}
+
+.previous-button {
+  background-color: #f44336; /* Red */
+}
+
+.next-button {
+  background-color: #2196F3; /* Blue */
+}
+
+.mark-for-review-next {
+  background-color: #900772; /* Purple */
+}
+
+.submit-button {
+  background-color: #009688; /* Teal */
+}
+
+/* Right Panel: Question navigation and status */
+.right-panel {
+  float: right;
+  width: 250px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  margin-left: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable scroll if content exceeds height */
+  border: 1px solid #ddd;
+}
+
+/* Adjust palette button styling for consistency */
+.palette-button {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0; /* Default light gray */
+}
+
+
+/* Right Panel title */
+.right-panel h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Question Palette Buttons */
+.question-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.palette-button {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  border: 1px solid #ddd;
+  background-color: #f0f0f0; /* Default light gray for not visited */
+}
+
+.palette-button:hover {
+  opacity: 0.8;
+}
+
+/* Palette color for different states */
+button.palette-button {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button.palette-button.green {
+  background-color: rgb(19, 198, 19); /* Answered */
+}
+
+button.palette-button.red {
+  background-color: rgb(212, 17, 17); /* Not Answered */
+}
+
+button.palette-button.purple {
+  background-color: rgb(187, 25, 187); /* Marked for Review */
+}
+
+/* Button styles */
+button#nextButton {
+  background-color: #2196F3; /* Blue for Next */
+  color: white;
+}
+
+button#prevButton {
+  background-color: #f44336; /* Red for Previous */
+  color: white;
+}
+
+button#saveNextButton {
+  background-color: #4CAF50; /* Green for Save and Next */
+  color: white;
+}
+
+button#markForReviewButton {
+  background-color: #900772; /* Orange for Mark for Review */
+  color: white;
+}
+
+button#submitButton {
+  background-color: #009688; /* Teal for Submit Now */
+  color: white;
+}

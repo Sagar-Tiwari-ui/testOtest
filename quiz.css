@@ -109,7 +109,7 @@ body {
 /* Optional: Reduce margins inside individual buttons if needed */
 .button-section button {
   margin: 0;  /* Remove or reduce margin around buttons */
-  padding: 10px 15px; /* Adjust padding inside buttons */
+  padding: 5px 5px; /* Adjust padding inside buttons */
 }
 
 .button-section button {
@@ -138,7 +138,9 @@ body {
 .next-button {
   background-color: #2196F3; /* Blue */
 }
-
+.clear-button {
+  background-color: #c9d81a; /*yellow*/
+}
 .mark-for-review-next {
   background-color: #900772; /* Purple */
 }
@@ -232,6 +234,10 @@ button.palette-button.purple {
 /* Button styles */
 button#nextButton {
   background-color: #2196F3; /* Blue for Next */
+  color: white;
+}
+button#clearButton {
+  background-color: #c9d81a; /* Yellow for Next */
   color: white;
 }
 

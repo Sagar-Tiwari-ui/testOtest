@@ -1,0 +1,688 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="quiz.css">
+    </head>
+    <body>
+        <div class="quiz-container">
+            <h1>Quiz Timer: <span id="timer">60:00</span></h1>
+            <div class="quiz-layout">
+                <form id="quizForm" onsubmit="calculateScore(event)">
+                    <div class="question-section-container">
+    
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q1: Acidified sodium fusion extract on addition of ferric chloride solution gives blood red colouration which confirm the presence of</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question0" value="Option A">
+                    <label>S and Cl	</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question0" value="Option B">
+                    <label>N and S</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question0" value="Option C">
+                    <label>N</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question0" value="Option D">
+                    <label>S</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q2: In sulphur detection of an organic compound, sodium nitroprusside solution is added to sodium extract. Formation of violet colour is due to</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question1" value="Option A">
+                    <label>Na₃Fe(CN)₆</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question1" value="Option B">
+                    <label>Na₃[Fe(CN)₅NOS]</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question1" value="Option C">
+                    <label>Fe(CNS)₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question1" value="Option D">
+                    <label>None of these</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q3: The maximum bond energy is present</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question2" value="Option A">
+                    <label>C - C </label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question2" value="Option B">
+                    <label>C - H</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question2" value="Option C">
+                    <label>C - N</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question2" value="Option D">
+                    <label>C - O</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q4: The general formula for cycloalkanes is </h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question3" value="Option A">
+                    <label>CnH2n+2</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question3" value="Option B">
+                    <label>CnH2n</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question3" value="Option C">
+                    <label>CnH2n-2</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question3" value="Option D">
+                    <label>CnHn</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q5: The bond that undergoes heterolytic cleavage most easily is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question4" value="Option A">
+                    <label>
+C-O</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question4" value="Option B">
+                    <label>C - C</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question4" value="Option C">
+                    <label>C - H</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question4" value="Option D">
+                    <label>O-H</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q6: The number of asymmetric carbon atoms and the number of optical isomers in CH₃(CHOH)₂COOH are respectively :</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question5" value="Option A">
+                    <label>3 and 4</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question5" value="Option B">
+                    <label>1 and 3</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question5" value="Option C">
+                    <label>2 and 4</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question5" value="Option D">
+                    <label>2 and 3</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q7: Conversion of CH₄ to CH₃Cl is an example of which of the following reaction?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question6" value="Option A">
+                    <label>Electrophilic substitution</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question6" value="Option B">
+                    <label>Free radical addition</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question6" value="Option C">
+                    <label>Nucleophilic substitution</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question6" value="Option D">
+                    <label>Free radical substitution</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q8: The stability of 2,3-dimethyl but-2-ene is more than 2-butene. This can be explained in terms of :</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question7" value="Option A">
+                    <label>Resonance</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question7" value="Option B">
+                    <label>Hyperconjugation</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question7" value="Option C">
+                    <label>Electromeric effect</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question7" value="Option D">
+                    <label>Inductive effect</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q9: The compound which gives the most stable carbonium ion on dehydration is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question8" value="Option A">
+                    <label>CH₃CH(CH₃)CH₂OH</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question8" value="Option B">
+                    <label>(CH₃)₃COH</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question8" value="Option C">
+                    <label>CH₂=CHCH₂CH₂OH</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question8" value="Option D">
+                    <label>CH₃CHOHCH₂- CH₃</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q10: The stability of the free radicals allyl, benzyl, 3°,2°,1° and CH₃ is in the order</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question9" value="Option A">
+                    <label>Benzyl > allyl >3°>2°>1°>CH₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question9" value="Option B">
+                    <label>Allyl > 3° > benzyl > 2° > 1° > CH₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question9" value="Option C">
+                    <label>3° > 2° > 1° > CH₃ > allyl > benzyl</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question9" value="Option D">
+                    <label>3° > 2° > 1° > CH₃ > allyl=benzyl</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q11: The correct order of increasing basicity of the given conjugate bases (R = CH₃) is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question10" value="Option A">
+                    <label>RCOO⁻ < HC≡C⁻ < R⁻< NH₂⁻</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question10" value="Option B">
+                    <label>R⁻ < HC≡C⁻ <RCOO⁻ <NH₂⁻</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question10" value="Option C">
+                    <label>RCOO⁻ < NH₂⁻ < HC≡C⁻ < R⁻</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question10" value="Option D">
+                    <label>RCOO⁻< HC≡C ⁻<NH₂⁻ < R⁻</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q12: In the following groups, -OAc, -OMe, -OSO₂Me, -OSO₂CF₃ </h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question11" value="Option A">
+                    <label>I > II > III > IV	</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question11" value="Option B">
+                    <label>IV > III > I > II</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question11" value="Option C">
+                    <label>III > II > I > IV</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question11" value="Option D">
+                    <label>II > III > IV > I</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q13: Hyperconjugation involves overlap of the following orbitals</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question12" value="Option A">
+                    <label>σ-σ</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question12" value="Option B">
+                    <label>σ-ρ</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question12" value="Option C">
+                    <label>p-p</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question12" value="Option D">
+                    <label>π-π</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q14: Correct order of stability is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question13" value="Option A">
+                    <label>HC≡C⁻ > CH₂=CH⁻ > CH₃-CH₂⁻</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question13" value="Option B">
+                    <label>CH₃-CH₂⁻ > CH₂=CH⁻ > CH ≡C ̅</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question13" value="Option C">
+                    <label>CH₃-CH₂⁻ > C̅≡CH ≅ CH₂=C̅H</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question13" value="Option D">
+                    <label>All are equally stable</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q15: Most stable carbocation is formed during the heating of which one of the following compound with conc. H₂SO₄?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question14" value="Option A">
+                    <label>(CH₃)₃COH</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question14" value="Option B">
+                    <label>C₆ H₅CH₂OH</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question14" value="Option C">
+                    <label>(CH₃ )₂CHOH</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question14" value="Option D">
+                    <label>CH₃CH(OH)CH₂CH₃</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q16: In estimation of nitrogen by Duma's method 1.18 g of an orgainc compound gave 224 mL of N₂ at NTP. The percentage of nitrogen in the compound is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question15" value="Option A">
+                    <label>20</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question15" value="Option B">
+                    <label>11.8</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question15" value="Option C">
+                    <label>47.7</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question15" value="Option D">
+                    <label>23.7</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q17: Of the following compounds which will have a zero dipole moment?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question16" value="Option A">
+                    <label>1,1-dichloroethylene</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question16" value="Option B">
+                    <label>trans-1,2-dichloroethylene</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question16" value="Option C">
+                    <label>cis-1,2-dichloroethylene</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question16" value="Option D">
+                    <label>None of the above </label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q18: Compounds whose molecules are superimposable on their mirror images even though they contain asymmetric carbon atoms or chiral centres are known as </h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question17" value="Option A">
+                    <label>Enantiomers</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question17" value="Option B">
+                    <label>Racemers</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question17" value="Option C">
+                    <label>Mesomers</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question17" value="Option D">
+                    <label>Conformers </label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q19: The hybridization of central carbon atom in 1,2- propadiene (allene) is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question18" value="Option A">
+                    <label>sp³</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question18" value="Option B">
+                    <label>sp²</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question18" value="Option C">
+                    <label>sp</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question18" value="Option D">
+                    <label>None of these</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q20: An organic compound C₅H₁₁X on dehydrohalogenation gives pentene-2 only. What is halide?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question19" value="Option A">
+                    <label>CH₃CH₂CHXCH₂CH₃	</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question19" value="Option B">
+                    <label>(CH₃ )₂CHCHXCH₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question19" value="Option C">
+                    <label>CH₃CH₂CH₂CHXCH₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question19" value="Option D">
+                    <label>CH₃CH₂CH₂CH₂CH₂X</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q21: Eclipsed and staggered forms of n-butane are called a pair of :</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question20" value="Option A">
+                    <label>Diastereomers</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question20" value="Option B">
+                    <label>Conformers</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question20" value="Option C">
+                    <label>Isomers</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question20" value="Option D">
+                    <label>Enantiomers</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q22: During the fusion of an organic compound with sodium metal, nitrogen of the compound is converted into</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question21" value="Option A">
+                    <label>NaNO₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question21" value="Option B">
+                    <label>NaNH₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question21" value="Option C">
+                    <label>NaCN</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question21" value="Option D">
+                    <label>NaNC</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q23: 2-methylpent-3-ene is achiral because it has </h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question22" value="Option A">
+                    <label>A centre of symmetry</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question22" value="Option B">
+                    <label>A plane of symmetry</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question22" value="Option C">
+                    <label>Symmetry at C₂ carbon</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question22" value="Option D">
+                    <label>Both centre and a plane of symmetry</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q24: Which of the following structures permits cis-trans isomerism?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question23" value="Option A">
+                    <label>X₂C=CY₂	</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question23" value="Option B">
+                    <label>XYC=CZ₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question23" value="Option C">
+                    <label>X₂C=CXY</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question23" value="Option D">
+                    <label>XYC=CXY</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q25: Which of the following order is correct regarding the acidity of carboxylic acids?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question24" value="Option A">
+                    <label>Cl₃CCOOH > Cl₂CHCOOH > ClCH₂COOH</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question24" value="Option B">
+                    <label>Cl₃ CCOOH > Cl₂CHCOOH < ClCH₂COOH</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question24" value="Option C">
+                    <label>Cl₃CCOOH < Cl₂CHCOOH > ClCH₂COOH</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question24" value="Option D">
+                    <label>Cl₃ CCOOH < Cl₂CHCOOH < ClCH₂COOH</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+                    <div class="button-section">
+                        <button type="button" onclick="previousQuestion()" id="prevButton" style="display: none;">Previous</button>
+                        <button type="button" onclick="saveAndNext()" id="saveNextButton">Save and Next</button>
+                        <button type="button" onclick="nextQuestion()" id="nextButton">Next</button>
+                        <button type="button" onclick="clear()" id="clearButton">Clear</button>
+                        <button type="submit" id="submitButton">Submit Now</button>
+                        <button type="button" onclick="markForReview()" id="markForReviewButton">Mark for Review</button>
+                    </div>
+                </form>
+            </div>
+            <div id="questionPalette" class="question-palette">
+                <h3>Question Palette</h3>
+                <div id="paletteButtons"></div>
+            </div>
+        </div>
+
+        <script src="quiz.js"></script>  <!-- Link to JS file -->
+    </body>
+    </html>
+    

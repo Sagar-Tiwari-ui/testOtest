@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Logo container to position the logo in the top right corner */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.logo-container img {
+    width: 100px; /* Adjust the logo size */
+    height: auto;
+}
+
+/* Title container for the title at the top center */
+.title-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.title-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Main content container with margin-top to start below the logo and title */
+.container {
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Adjust margin to ensure space below title */
+}
+
+h2 {
+    text-align: center;
+}
+
+.instructions {
+    margin-bottom: 20px;
+}
+
+.question-status {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.question-status span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.status-gray {
+    background-color: #d3d3d3;
+}
+
+.status-orange {
+    background-color: #ff6600;
+}
+
+.status-green {
+    background-color: #4caf50;
+}
+
+.status-purple {
+    background-color: #7a33cc;
+}
+
+.status-purple-answered {
+    background-image: linear-gradient(45deg, #7a33cc 50%, #1dd61d 50%);
+    background-size: 200%;
+}
+
+.navigation-buttons {
+    margin-top: 20px;
+}
+
+.nav-btn {
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.nav-btn:hover {
+    background-color: #0056b3;
+}
+
+.checkbox-container {
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+}
+
+.proceed-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+}
+
+.proceed-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}

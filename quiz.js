@@ -88,55 +88,47 @@ function previousQuestion() {
     }
 }
 
-// Function to calculate the score
-async function calculateScore(event) {
-    if (event) event.preventDefault();  // Prevent form submission if event is present
-    clearInterval(timer);  // Stop the timer
+// Function to clear the response of the current question
+function clearResponse() {
+    const currentQuestion = questions[currentQuestionIndex];
+    const selectedAnswer = currentQuestion.querySelector('input[type="radio"]:checked');
+    
+    if (selectedAnswer) {
+        selectedAnswer.checked = false; // Uncheck the selected radio button
+    }
+    // Optionally, you can remove the stored answer as well
+    delete studentAnswers[currentQuestionIndex]; // Clear the saved answer
+}
 
-    let score = 0, totalCorrect = 0, totalAttempted = 0;
+// Function to calculate the score in quiz.html
+function calculateScore(event) {
+    if (event) event.preventDefault();  // Prevent form submission
 
-    // Iterate through each question to calculate score
+    let score = 0, totalCorrect = 0;
+
     questions.forEach((question, index) => {
-        const correctAnswer = question.getAttribute('data-correct');  // Get the correct answer from the attribute
-        const selectedAnswer = studentAnswers[index];  // Get the student's selected answer
+        const correctAnswer = question.getAttribute('data-correct');  // Get correct answer
+        const selectedAnswer = studentAnswers[index];  // Get student's answer
 
-        if (selectedAnswer) {
-            totalAttempted++;
-            if (selectedAnswer === correctAnswer) {  // Compare the selected option with the correct answer
-                score += 4;  // Correct answer +4
-                totalCorrect++;
-            } else {
-                score -= 1;  // Incorrect answer -1
-            }
+        if (selectedAnswer === correctAnswer) {
+            score += 4;  // Add points for correct answer
+            totalCorrect++;
+        } else if (selectedAnswer) {
+            score -= 1;  // Deduct points for wrong answer
         }
     });
 
-    // Log the scores to the console for debugging (optional)
-    console.log("Score:", score);
-    console.log("Total Correct:", totalCorrect);
-    console.log("Total Attempted:", totalAttempted);
+    const timeTaken = Math.floor((Date.now() - startTime) / 1000);  // Calculate time taken in seconds
+    const accuracy = (totalCorrect / questions.length) * 100;  // Calculate accuracy percentage
 
-    // Calculate additional data
-    const timeTaken = Math.floor((Date.now() - startTime) / 1000); // Total time in seconds
-    const accuracy = (totalCorrect / questions.length) * 100;
-
-    // Store the results in sessionStorage (or use any other method for passing data to the result page)
-    sessionStorage.setItem('quizScore', score);
+    // Save score and other data to sessionStorage
+    sessionStorage.setItem('Score', score);
     sessionStorage.setItem('timeTaken', timeTaken);
     sessionStorage.setItem('accuracy', accuracy);
 
-    // Call the function to store quiz results in Firestore
-    try {
-        await storeQuizResults(score, accuracy, timeTaken);
-        console.log("Quiz results stored successfully.");
-    } catch (error) {
-        console.error("Error storing quiz results:", error);
-    }
-
-    // Redirect to the result page after score calculation
+    // Redirect to result.html after calculation
     window.location.href = 'result.html';
 }
-
 
 // Initialize the quiz by showing the first question
 showQuestion(currentQuestionIndex);
@@ -169,6 +161,15 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error("Submit button not found");
     }
 });
+
+// Event listener for tab visibility
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        // Automatically submit the quiz when the tab is not visible
+        calculateScore();
+    }
+});
+
 // Disable right-click context menu
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();  // Prevent the context menu from appearing

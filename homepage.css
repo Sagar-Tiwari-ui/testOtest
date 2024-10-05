@@ -5,6 +5,31 @@ body {
     background-color: #f9f9f9;
 }
 
+/* Logo container to position the logo in the top right corner */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.logo-container img {
+    width: 100px; /* Adjust the logo size */
+    height: auto;
+}
+
+/* Title container for the title at the top center */
+.title-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.title-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Main content container with margin-top to start below the logo and title */
 .container {
     width: 80%;
     margin: auto;
@@ -12,6 +37,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Adjust margin to ensure space below title */
 }
 
 h2 {

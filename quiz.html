@@ -1,0 +1,690 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="quiz.css">
+    <script type="module" src="marks.js"></script>
+    </head>
+    <body>
+        <div class="quiz-container">
+            <h1>Quiz Timer: <span id="timer">60:00</span></h1>
+            <div class="quiz-layout">
+                <form id="quizForm" onsubmit="calculateScore(event)">
+                    <div class="question-section-container">
+    
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q1: If Z-axis is the molecular axis, then π-molecular orbitals are formed by the overlap of</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question0" value="Option A">
+                    <label>s + pz</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question0" value="Option B">
+                    <label>px + py</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question0" value="Option C">
+                    <label>pz + pz</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question0" value="Option D">
+                    <label>px + px</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q2: According to MO theory, which of the following lists ranks the nitrogen species in terms of increasing bond order?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question1" value="Option A">
+                    <label>N₂⁻<N₂²⁻<N₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question1" value="Option B">
+                    <label>N₂⁻<N₂<N₂²⁻</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question1" value="Option C">
+                    <label>N₂²⁻<N₂⁻<N₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question1" value="Option D">
+                    <label>N₂<N₂²⁻<N₂⁻</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q3: The correct increasing covalent nature is:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question2" value="Option A">
+                    <label>NaCl<LiCl<BeCl₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question2" value="Option B">
+                    <label>BeCl₂<NaCl<LiCl</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question2" value="Option C">
+                    <label>BeCl₂<LiCl<NaCl</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question2" value="Option D">
+                    <label>LiCl<NaCl<BeCl₂</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q4: The C – H bond distance is the longest in</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question3" value="Option A">
+                    <label>C₂H₆</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question3" value="Option B">
+                    <label>C₂H₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question3" value="Option C">
+                    <label>C₂H₂Br₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question3" value="Option D">
+                    <label>C₂H₄</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q5: Which among the following has highest ionic radius?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question4" value="Option A">
+                    <label>F⁻</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question4" value="Option B">
+                    <label>B³⁺</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question4" value="Option C">
+                    <label>O²⁻</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question4" value="Option D">
+                    <label>Li⁺</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q6: The correct ionic radii order is:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question5" value="Option A">
+                    <label>N³⁻>O²⁻>F⁻>Na⁺>Mg²⁺>Al³⁺</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question5" value="Option B">
+                    <label>N³⁻>〖Na⁺〗^ > O²⁻>F⁻>Mg²⁺>Al³⁺</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question5" value="Option C">
+                    <label>Na⁺>O²⁻>N³⁻>F⁻>Mg²⁺>Al³⁺</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question5" value="Option D">
+                    <label>O²⁻>F⁻>Na⁺>N³⁻>Mg²⁺>Al³⁺</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q7: Of the following compounds which will have a zero dipole moment?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question6" value="Option A">
+                    <label>1,1-dichloroethylene</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question6" value="Option B">
+                    <label>trans-1,2-dichloroethylene</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question6" value="Option C">
+                    <label>cis-1,2-dichloroethylene</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question6" value="Option D">
+                    <label>None of the above </label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q8: Correct order of bond angles in NH₃, PCl₃ and BCl₃ is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question7" value="Option A">
+                    <label>PCl₃>NH₃>BCl₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question7" value="Option B">
+                    <label>NH₃>BCl₃>PCl₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question7" value="Option C">
+                    <label>NH₃>PCl₃>BCl₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question7" value="Option D">
+                    <label>BCl₃>NH₃>PCl₃</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q9: Which of the following is paramagnetic?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question8" value="Option A">
+                    <label>O₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question8" value="Option B">
+                    <label>CN⁻</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question8" value="Option C">
+                    <label>CO</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question8" value="Option D">
+                    <label>NO⁺</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q10: Which one of the following is a correct set with respect to molecule, hybridisation and shape?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question9" value="Option A">
+                    <label>BeCl₂,sp², linear</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question9" value="Option B">
+                    <label>BeCl₂,sp², triangular planar</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question9" value="Option C">
+                    <label>BCl₃,sp², triangular planar</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question9" value="Option D">
+                    <label>BCl₃,sp³, tetrahedral</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q11: The hybridization of atomic orbitals of nitrogen in NO₂⁺, NO₃⁻ and NH₄⁺ are</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question10" value="Option A">
+                    <label>sp,sp³ and sp² respectively</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question10" value="Option B">
+                    <label>sp,sp² and sp³ respectively</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question10" value="Option C">
+                    <label>sp²,sp and sp³ respectively</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question10" value="Option D">
+                    <label>sp²,sp³ and sp respectively</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q12: OF₂ is:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question11" value="Option A">
+                    <label>Linear molecule and sp -hybridized</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question11" value="Option B">
+                    <label>Tetrahedral molecule and sp³-hybridized</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question11" value="Option C">
+                    <label>Bent molecule and sp³-hybridized</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question11" value="Option D">
+                    <label>None of the above</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q13: Net work done by the system in a cyclic process is equal to:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question12" value="Option A">
+                    <label>Zero	</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question12" value="Option B">
+                    <label>∆U</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question12" value="Option C">
+                    <label>∆H</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question12" value="Option D">
+                    <label>q</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q14: One mole of a non-ideal gas undergoes a change of state (2.0 atm,3.0 L,95 K)→(4.0 atm,5.0 L,245 K) with a change in internal energy, ∆U=30.0 L atm. The change in enthalpy (∆H) of the process in L atm is:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question13" value="Option A">
+                    <label>40</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question13" value="Option B">
+                    <label>42.3</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question13" value="Option C">
+                    <label>44</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question13" value="Option D">
+                    <label>Not defined, because pressure is not constant</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q15: The entropy change for the reaction given below,
+2H₂ (g)+O₂ (g)→2H₂ O(l)
+Is…at 300 K. Standard entropies of H₂ (g),O₂ (g) and H₂ O(l) are 126.6,201.20 and 68.0 JK⁻¹ mol⁻¹ respectively.</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question14" value="Option A">
+                    <label>(-318.4) JK⁻¹ mol⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question14" value="Option B">
+                    <label>318.4 JK⁻¹ mol⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question14" value="Option C">
+                    <label>31.84 JK⁻¹ mol⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question14" value="Option D">
+                    <label>None of these</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q16: Molar heat capacity of a gas at constant temperature and pressure is </h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question15" value="Option A">
+                    <label>(3/2)R</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question15" value="Option B">
+                    <label>(5/2)R</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question15" value="Option C">
+                    <label>Infinite</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question15" value="Option D">
+                    <label>Depends upon atomicity of gas</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q17: An ideal gas expands in volume from 1×10⁻³  m³ to 1×10⁻²  m³ at 300 K against a constant pressure of 1×10⁵  Nm⁻². The work done is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question16" value="Option A">
+                    <label>-900 J</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question16" value="Option B">
+                    <label>-900 kJ</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question16" value="Option C">
+                    <label>270 kJ</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question16" value="Option D">
+                    <label>900 Kj</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q18: When 1 mole of gas is heated at constant volume. Temperature is raised from 298 to 308 K. Heat supplied to the gas is 500 J. Then which statement is correct?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question17" value="Option A">
+                    <label>q=-W=500 J,∆U=0</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question17" value="Option B">
+                    <label>q=∆U=500 J,W=0</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question17" value="Option C">
+                    <label>q=W=500 J,∆U=0</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question17" value="Option D">
+                    <label>∆U=0,q=W=-500 J</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q19: The entropy change for vaporisation of liquid water to steam at 100℃ is…J K⁻¹ mol⁻¹. Given that heat of vaporisation is 40.8 kJ mol⁻¹</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question18" value="Option A">
+                    <label>109.38</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question18" value="Option B">
+                    <label>100.38</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question18" value="Option C">
+                    <label>110.38</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question18" value="Option D">
+                    <label>120.38</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q20: The work done during the expansion of a gas from a volume of 4 dm³  to 6 dm³ against a constant external pressure of 3 atm is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question19" value="Option A">
+                    <label>-6 J	</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question19" value="Option B">
+                    <label>-608 J</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question19" value="Option C">
+                    <label>+304 J</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question19" value="Option D">
+                    <label>-304 J</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q21: ∆S is positive for the change:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question20" value="Option A">
+                    <label>Mixing of two gases</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question20" value="Option B">
+                    <label>Boiling of liquid</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question20" value="Option C">
+                    <label>Melting of solid</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question20" value="Option D">
+                    <label>All of these</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q22: The maximum work done in expanding 16 g oxygen at 300 K and occupying a volume of 5 dm³ isothermally until the volume become 25dm³ is:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question21" value="Option A">
+                    <label>2.01×10³  J	</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question21" value="Option B">
+                    <label>+2.81×10³  J</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question21" value="Option C">
+                    <label>2.01×10⁻³  J</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question21" value="Option D">
+                    <label>+2.01×10-⁶  J</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q23: At 1 atm  pressure, ∆S=75 JK⁻¹ mol⁻¹;∆H=30 kJ mol⁻¹. The temperature of the reaction at equilibrium is:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question22" value="Option A">
+                    <label>400 K</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question22" value="Option B">
+                    <label>330 K</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question22" value="Option C">
+                    <label>200 K</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question22" value="Option D">
+                    <label>110 K</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q24: Which one of the following is not a state function?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question23" value="Option A">
+                    <label>Enthalpy	</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question23" value="Option B">
+                    <label>Entropy</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question23" value="Option C">
+                    <label>Work</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question23" value="Option D">
+                    <label>Free energy</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q25: Temperature and heat are:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question24" value="Option A">
+                    <label>Extensive properties</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question24" value="Option B">
+                    <label>Intensive properties </label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question24" value="Option C">
+                    <label>Intensive and extensive properties respectively</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question24" value="Option D">
+                    <label>Extensive and intensive properties respectively</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+                    <div class="button-section">
+                        <button type="button" onclick="previousQuestion()" id="prevButton" style="display: none;">Previous</button>
+                        <button type="button" onclick="saveAndNext()" id="saveNextButton">Save and Next</button>
+                        <button type="button" onclick="nextQuestion()" id="nextButton">Next</button>
+                        <button type="button" onclick="clear()" id="clearButton">Clear</button>
+                        <button type="submit" id="submitButton">Submit Now</button>
+                        <button type="button" onclick="markForReview()" id="markForReviewButton">Mark for Review</button>
+                    </div>
+                </form>
+            </div>
+            <div id="questionPalette" class="question-palette">
+                <h3>Question Palette</h3>
+                <div id="paletteButtons"></div>
+            </div>
+        </div>
+
+        <script src="quiz.js"></script>  <!-- Link to JS file -->
+    </body>
+    </html>
+    

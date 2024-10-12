@@ -1,0 +1,701 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="quiz.css">
+    <script type="module" src="marks.js"></script>
+    </head>
+    <body>
+        <div class="quiz-container">
+            <h1>Quiz Timer: <span id="timer">60:00</span></h1>
+            <div class="quiz-layout">
+                <form id="quizForm" onsubmit="calculateScore(event)">
+                    <div class="question-section-container">
+    
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q1: In Arrhenius plot intercept is equal to</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question0" value="Option A">
+                    <label>-E_a/R</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question0" value="Option B">
+                    <label>ln A</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question0" value="Option C">
+                    <label>ln k</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question0" value="Option D">
+                    <label>log₁0⁡a</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q2: Half-life period of a first order reaction is 1386 seconds. The specific rate constant of the reaction is:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question1" value="Option A">
+                    <label>5.0×10⁻² s⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question1" value="Option B">
+                    <label>5.0×10⁻³ s⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question1" value="Option C">
+                    <label>0.5×10⁻² s⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question1" value="Option D">
+                    <label>0.5×10⁻³ s⁻¹</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q3: The half-life period of a first order reaction is 1 min 40 s. Calculate its rate constant.</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question2" value="Option A">
+                    <label>6.93×10⁻³ min⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question2" value="Option B">
+                    <label>6.93×10⁻³ s⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question2" value="Option C">
+                    <label>6.93×10⁻³ s</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question2" value="Option D">
+                    <label>6.93×10^3 s</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q4: The reaction 2A+B+C→D+Eis found to be first order in A, second in B and zero order in C. What is the effect on the rate of increasing concentration of A, B and C two times? </h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question3" value="Option A">
+                    <label>72 times</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question3" value="Option B">
+                    <label>8 times</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question3" value="Option C">
+                    <label>24 times</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question3" value="Option D">
+                    <label>36 times</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q5: In a reaction, the threshold energy is equal to:</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question4" value="Option A">
+                    <label>Activation energy + normal energy of reactants</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question4" value="Option B">
+                    <label>Activation energy – normal energy of reactants</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question4" value="Option C">
+                    <label>Activation energy</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question4" value="Option D">
+                    <label>Normal energy of reactants</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q6: Which one is not correct?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question5" value="Option A">
+                    <label>Rate of zero order reaction depends upon initial concentration of reactant</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question5" value="Option B">
+                    <label>Rate of zero order reaction does not depend upon initial concentration of reactant</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question5" value="Option C">
+                    <label>t_(1/2) of first order reaction is independent of initial concentration of reaction </label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question5" value="Option D">
+                    <label>t_(1/2) of zero order reaction is dependent of initial concentration of reaction</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q7: A reaction proceeds by first order, 75% of this reaction was completed in 32 min. the time required for 50% completion is </h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question6" value="Option A">
+                    <label>8 min</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question6" value="Option B">
+                    <label>16 min</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question6" value="Option C">
+                    <label>20 min </label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question6" value="Option D">
+                    <label>24 min</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q8: The rate of the reaction
+CCl₃ CHO+NO→CHCl₃+NO+CO is equal to rate k[CCl₃ CHO][NO]. If concentration is expressed in mol/L.  The unit of k is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question7" value="Option A">
+                    <label>L mol⁻¹  s⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question7" value="Option B">
+                    <label>mol L⁻¹  s⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question7" value="Option C">
+                    <label>L²  mol⁻²  s⁻¹</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question7" value="Option D">
+                    <label>s⁻¹</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q9: Ni / Ni²⁺  [1.0 M] || Au³⁺  [1.0 M] / Au where E°
+ for Ni²⁺  /Ni is -0.250 V; and E° for
+ Au³⁺  / Au is 0.150 V. The emf of the cell is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question8" value="Option A">
+                    <label>+1.25 V</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question8" value="Option B">
+                    <label>-1.75 V</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question8" value="Option C">
+                    <label>+1.75 V</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question8" value="Option D">
+                    <label>+0.4 V</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q10: The product obtained at anode when 50% H₂ SO₄ aqueous solution is electrolysed using platinum electrodes </h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question9" value="Option A">
+                    <label>H₂ SO₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question9" value="Option B">
+                    <label>H₂ S₂ O_8</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question9" value="Option C">
+                    <label>O₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question9" value="Option D">
+                    <label>H₂</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q11: E₁,E₂, and E₃ are the emfs of the following three galvanic cells respectively
+	Zn (s) | 〖Zn〗²⁺ (0.1 M) || Cu²⁺ (1 M) | Cu (s)
+	Zn (s) | 〖Zn〗²⁺ (1 M) || Cu²⁺ (1 M) | Cu (s)
+	Zn (s) | 〖Zn〗²⁺ (1 M) || Cu²⁺ (0.1 M) | Cu (s)
+Which one of the following is true?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question10" value="Option A">
+                    <label>E₂>E₁>E₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question10" value="Option B">
+                    <label>E₁>E₂>E₃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question10" value="Option C">
+                    <label>E₃>E₁>E₂</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question10" value="Option D">
+                    <label>E₃>E₂>E₁</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q12: The resistance of a decinormal solution of a salt occupying a volume between two platinum electrodes 1.80 cm apart and 5.4 cm² in area was formed to be 32 ohm. The specific and equivalent conductivity respectively in their proper units are :	</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question11" value="Option A">
+                    <label>104.1 and 0.0104</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question11" value="Option B">
+                    <label>208.2 and 0.0208</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question11" value="Option C">
+                    <label>0.0104 and 104.0</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question11" value="Option D">
+                    <label>None of these</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q13: The value of equilibrium constant for a feasible cell reaction is :</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question12" value="Option A">
+                    <label>< 1</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question12" value="Option B">
+                    <label>Zero</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question12" value="Option C">
+                    <label>1</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question12" value="Option D">
+                    <label>> 1</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option C">
+            <h2>Q14: At 25°C, the standard e.m.f. of cell having reactions involving a two electron change is found to be 0.295 V. The equilibrium constant of the reaction is :</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question13" value="Option A">
+                    <label>29.5 ×10⁻²</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question13" value="Option B">
+                    <label>10</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question13" value="Option C">
+                    <label>10¹⁰</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question13" value="Option D">
+                    <label>29.5 ×10¹⁰</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q15: E^° for Fe²⁺  + 2e-  → Fe is -0.44 V and E° for
+ Zn²⁺  + 2e-  → Zn is -0.76 V thus</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question14" value="Option A">
+                    <label>Zn is more electropositive than Fe</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question14" value="Option B">
+                    <label>Zn is more electronegative than Fe</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question14" value="Option C">
+                    <label>Fe is more electropositive than Zn</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question14" value="Option D">
+                    <label>None of the above</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q16: A certain quantity of electricity is passed through aqueous solution of AgNO₃ and CuSO₄ connected in series. If Ag (at.wt.108) deposited at the cathode is 1.08 g then Cu deposited at the cathode is (at. wt. of Cu is 63.53 ):</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question15" value="Option A">
+                    <label>6.354 g</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question15" value="Option B">
+                    <label>0.317 g</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question15" value="Option C">
+                    <label>0.6354 g</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question15" value="Option D">
+                    <label>3.177 g</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q17: Phenol dimerises in benzene having van’t Hoff factor 0.54. What is the degree of association?</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question16" value="Option A">
+                    <label>1.92</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question16" value="Option B">
+                    <label>0.98</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question16" value="Option C">
+                    <label>1.08</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question16" value="Option D">
+                    <label>0.92</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q18: 0.004 M Na₂ SO₄  is isotonic with 0.01 M glucose.Degree of dissociation of Na₂ SO₄ is </h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question17" value="Option A">
+                    <label>61</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question17" value="Option B">
+                    <label>244</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question17" value="Option C">
+                    <label>366</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question17" value="Option D">
+                    <label>122</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q19: What is the freezing point of a solution containing 8.1 g HBr in 100 g water assuming the acid to be 90% ionised (k_f for water =1.86 kg mol⁻¹)?	</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question18" value="Option A">
+                    <label>-0.35℃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question18" value="Option B">
+                    <label>-1.35℃</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question18" value="Option C">
+                    <label>nan</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question18" value="Option D">
+                    <label>-3.53℃</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q20: Choose the correct statement. 
+When concentration of a salt solution is increased</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question19" value="Option A">
+                    <label>Boiling point increases while vapour pressure decreases. </label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question19" value="Option B">
+                    <label>Boiling point decreases while vapour pressure increases. </label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question19" value="Option C">
+                    <label>Freezing point decreases while vapour pressure increases.</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question19" value="Option D">
+                    <label>Freezing point increases while vapour pressure decreases. </label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q21: Which of the following aqueous solutions produce the same osmotic pressure?
+(i)0.1 M NaCl solution
+(ii) 0.1 M glucose solution
+(iii)0.6 g urea in 100 mL solution
+(iv)1.0 g of a non-electrolyte solute (X) in 50 mL solution (molar mass of X=200)</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question20" value="Option A">
+                    <label>(i), (ii), (iii)</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question20" value="Option B">
+                    <label>(ii), (iii), (iv)</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question20" value="Option C">
+                    <label>(i), (ii), (iv)</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question20" value="Option D">
+                    <label>(i), (iii), (iv)</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q22: In the case of osmosis, solvent molecules move from :</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question21" value="Option A">
+                    <label>Higher vapour pressure to lower vapour pressure</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question21" value="Option B">
+                    <label>Higher concentration to lower concentration</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question21" value="Option C">
+                    <label>Lower vapour pressure to higher vapour pressure</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question21" value="Option D">
+                    <label>Higher osmotic pressure to lower osmotic pressure</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option B">
+            <h2>Q23: Two solutions of glucose have osmotic pressure 1.0 and 3.5 atm. If 1 L of first solution is mixed with V L of second solution, the osmotic pressure of the resultant solution becomes 2.5 atm. Volume of second solution is</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question22" value="Option A">
+                    <label>1.0 L</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question22" value="Option B">
+                    <label>1.5 L</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question22" value="Option C">
+                    <label>2.5 L</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question22" value="Option D">
+                    <label>3.5 L</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option D">
+            <h2>Q24: 5% (wt./vol.) aqueous NaCl solution and 5% (wt./vol.) aqueous KCl solution are :</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question23" value="Option A">
+                    <label>Isotonic </label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question23" value="Option B">
+                    <label>Isomolar</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question23" value="Option C">
+                    <label>Equinormal</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question23" value="Option D">
+                    <label>None of these</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+        <div class="question-section" style="display: none;" data-correct="Option A">
+            <h2>Q25: Azeotropic mixture are</h2>
+        <ul class="question-options">
+                <li>
+                    <input type="radio" name="question24" value="Option A">
+                    <label>Constant temperature boiling mixture</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question24" value="Option B">
+                    <label>Those which boils at different temperatures</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question24" value="Option C">
+                    <label>Mixture of two solids</label>
+                </li>
+            
+                <li>
+                    <input type="radio" name="question24" value="Option D">
+                    <label>None of the above</label>
+                </li>
+            
+            </ul>
+        </div>
+        
+                    <div class="button-section">
+                        <button type="button" onclick="previousQuestion()" id="prevButton" style="display: none;">Previous</button>
+                        <button type="button" onclick="saveAndNext()" id="saveNextButton">Save and Next</button>
+                        <button type="button" onclick="nextQuestion()" id="nextButton">Next</button>
+                        <button type="button" onclick="clear()" id="clearButton">Clear</button>
+                        <button type="submit" id="submitButton">Submit Now</button>
+                        <button type="button" onclick="markForReview()" id="markForReviewButton">Mark for Review</button>
+                    </div>
+                </form>
+            </div>
+            <div id="questionPalette" class="question-palette">
+                <h3>Question Palette</h3>
+                <div id="paletteButtons"></div>
+            </div>
+        </div>
+
+        <script src="quiz.js"></script>  <!-- Link to JS file -->
+    </body>
+    </html>
+    
